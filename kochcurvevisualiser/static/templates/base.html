@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitwise Koch Curve Visualiser</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script type="module" src="{% static 'js/animation.js' %}"></script>
+</head>
+<body>
+    <header style="text-align: center;">
+        <h1>Bitwise Koch Curve Visualiser</h1>
+        <p>
+            The Koch curve is a classic example of a fractal curve, created by recursively altering a straight line segment.
+            This visualiser allows you to explore the fascinating properties of the Koch curve by adjusting the number of iterations.
+        </p>
+    </header>
+    <div class="description" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2>About the Koch Curve</h2>
+        <p>
+            The Koch curve starts with a straight line segment. In each iteration, every line segment is divided into three equal parts,
+            and the middle segment is replaced with two segments that form an equilateral "bump". This process is repeated for each line segment,
+            resulting in a complex, infinitely detailed curve.
+        </p>
+        <p>
+            The Koch curve has several interesting properties:
+        </p>
+        <ul>
+            <li>It is continuous everywhere but differentiable nowhere.</li>
+            <li>Its length increases by a factor of 4/3 with each iteration.</li>
+            <li>It has a fractal dimension of approximately 1.2619.</li>
+        </ul>
+        <p>
+            Use the controls below to adjust the number of iterations and see how the Koch curve evolves!
+        </p>
+        <h2>Bitwise Parity Calculation</h2>
+        <p>
+            In addition to visualising the Koch curve, this application also demonstrates a bitwise parity calculation.
+            Bitwise operations are fundamental in computer science and are used in various applications, including error detection and correction.
+            The parity of a number indicates whether the count of set bits (1s) is odd or even.
+        </p>
+        <p>
+            The bitwise parity is calculated using the XOR operation, which efficiently determines the parity by combining bits.
+            This method can be used to calculate the Koch curve iterations by determining the parity of the iteration count, and applying 
+            specific transformations based on whether the count is odd or even.
+        </p>
+    </div>
+    {% block content %}{% endblock %}
+    <div id="container" style="width: 600px; height: 600px; overflow: hidden; margin: 2rem auto; display: block; position: relative;">
+        <div class="square car motion-path-car" style="transform: translateX(189px) translateY(4px);"></div>
+    </div>
+    <div class="iteration-input">
+        <h2>Adjust Iterations</h2>
+        <div class="iteration-action">
+            <label for="iteration">Iterations (0-6): </label>
+            <input type="number" id="iteration" name="iteration" min="0" max="6" value="3">
+        </div>
+        <button type="submit" id="updateButton">Update Koch Curve</button>
+    </div>
+    <footer>
+        <p>&copy; 2026 Bitwise Koch Curve Visualiser</p>
+    </footer>
+</body>
+</html>
