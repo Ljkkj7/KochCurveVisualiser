@@ -10,10 +10,6 @@ A Django web application for generating, animating, and visualising the Koch cur
 - Responsive, modern UI
 - Easily configurable iteration count
 
-## Demo
-
-![Koch Curve Animation](docs/demo.gif)
-
 ## Getting Started
 
 ### Prerequisites
